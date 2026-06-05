@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌙 Dark Todo List - Gestor de Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🌙 Dark Todo List</h1>
+            <p class="subtitle">Gestor de Tareas con Almacenamiento Local</p>
+        </header>
+
+        <main class="main">
+            <!-- Input Section -->
+            <section class="input-section">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="todoInput" 
+                        class="todo-input" 
+                        placeholder="Añade una nueva tarea..."
+                        autocomplete="off"
+                    >
+                    <button id="addBtn" class="btn btn-add">➕ Agregar</button>
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Todas</button>
+                    <button class="filter-btn" data-filter="active">Activas</button>
+                    <button class="filter-btn" data-filter="completed">Completadas</button>
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="stats-section">
+                <div class="stat-item">
+                    <span class="stat-label">Total de Tareas:</span>
+                    <span class="stat-value" id="totalCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Completadas:</span>
+                    <span class="stat-value completed" id="completedCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Pendientes:</span>
+                    <span class="stat-value pending" id="pendingCount">0</span>
+                </div>
+            </section>
+
+            <!-- Todo List -->
+            <section class="todos-section">
+                <ul id="todoList" class="todo-list">
+                    <!-- Tareas se agregarán aquí dinámicamente -->
+                </ul>
+                <div id="emptyState" class="empty-state">
+                    <p>📝 No hay tareas. ¡Comienza a agregar algunas!</p>
+                </div>
+            </section>
+
+            <!-- Actions Section -->
+            <section class="actions-section">
+                <button id="clearCompleted" class="btn btn-secondary">🗑️ Limpiar Completadas</button>
+                <button id="clearAll" class="btn btn-danger">⚠️ Borrar Todo</button>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>💾 Los datos se guardan automáticamente en tu navegador</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
